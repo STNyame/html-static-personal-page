@@ -21,7 +21,7 @@ button {
 }
 
 button:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   background-color: orangered;
 }
 
@@ -29,13 +29,18 @@ h1 {
   font-family: "Noto Sans", sans-serif;
   font-weight: 400;
   font-size: 80px;
-  margin: 200px;
+  margin: 200px auto;
+  text-shadow: 1px white;
 }
 
 h2,
 h3 {
   font-size: 60px;
   font-weight: 200;
+}
+
+p {
+  margin: 30px 30px;
 }
 /* class */
 
@@ -46,11 +51,18 @@ h3 {
   background-color: dimgrey;
   color: white;
 }
+
+.comment-p {
+  font-family: "Shadows Into Light", cursive;
+  color: black;
+  margin: 30px;
+}
+
 .copyright {
   transition: color 0.5s ease;
   font-size: 20px;
   color: dimgrey;
-  margin: 40px auto 40px;
+  margin: 40px auto 80px;
 }
 .cdark {
   color: rgb(187, 187, 187);
@@ -61,6 +73,7 @@ h3 {
   align-items: center;
   justify-content: center;
   align-content: space-between;
+  width: 100%;
 }
 .logo {
   height: 100px;
@@ -68,7 +81,19 @@ h3 {
   margin: 40px;
 }
 
-.middle,
+.middle {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.middle-content {
+  flex: 1;
+  padding: 80px;
+}
+
 .bottom {
   /* background-color: #ebd8b7; */
 
@@ -78,34 +103,42 @@ h3 {
   flex-direction: column;
   padding: 10px;
 }
-.nav {
-  position: fixed;
-  right: 0;
-  bottom: auto;
-  top: 20%;
-  background-color: rgb(144, 144, 144);
-  border-radius: 10px 0 0 10px;
-}
 
-.nav-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+@media only screen and (min-width: 890px) {
+  .nav {
+    position: fixed;
+    right: 0;
+    bottom: auto;
+    top: 20%;
+    background-color: rgb(144, 144, 144);
+    border-radius: 10px 0 0 10px;
+    z-index: 1;
+  }
+
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 890px) {
   .nav {
     position: fixed;
     bottom: 0;
+    right: 0;
     width: 100%;
     background-color: rgb(144, 144, 144);
     /* border-radius: 10px 0 0 10px; */
+    z-index: 1;
   }
 
   .nav-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
   }
 }
 
@@ -119,14 +152,16 @@ h3 {
 .nav-logo:hover {
   transform: scale(1.5);
 }
+
 .profile-img {
   height: 300px;
   width: 300px;
   border-radius: 100%;
-  filter: url(#wherearemyglasses);
 }
 
 .project-div,
+.form-div,
+.comment-div,
 .logo-div {
   display: flex;
   flex-direction: row;
@@ -134,6 +169,10 @@ h3 {
   align-content: space-around;
   justify-content: center;
   margin: 50px 50px 80px;
+}
+.comment-div {
+  flex-shrink: inherit;
+  margin-bottom: 100px;
 }
 .project-img {
   height: 300px;
@@ -143,12 +182,25 @@ h3 {
   transition: transform 0.1s ease-in;
 }
 
-.project-img:hover {
-  transform: scale(1.5);
+.comment-img {
+  text-align: left;
+  height: 200px;
+  width: 200px;
+  background-color: rgb(255, 176, 30);
+  margin: 20px;
+  transition: transform 0.1s ease-in, box-shadow 0.05s ease-in;
 }
-/* .title {
-  text-shadow: 3px 3px 3px #8b8989;
-} */
+.project-img:hover,
+.comment-img:hover {
+  transform: scale(1.5);
+  justify-self: center;
+  box-shadow: 30px 50px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  color: rgb(255, 94, 0);
+}
+
 .top {
   display: flex;
   flex-direction: column;

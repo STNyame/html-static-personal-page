@@ -1,5 +1,7 @@
 /* tag styles */
-
+a {
+  text-decoration: none;
+}
 body {
   text-align: center;
   margin: 0;
@@ -29,18 +31,18 @@ h1 {
   font-family: "Noto Sans", sans-serif;
   font-weight: 400;
   font-size: 80px;
-  margin: 200px auto;
+  margin: 100px auto 180px;
   text-shadow: 1px white;
 }
 
 h2,
 h3 {
-  font-size: 60px;
+  font-size: 2rem;
   font-weight: 200;
 }
 
 p {
-  margin: 30px 30px;
+  /* margin: 30px 30px; */
 }
 /* class */
 
@@ -84,14 +86,22 @@ p {
 .middle {
   display: flex;
   align-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
+  margin: auto 300px;
 }
 
 .middle-content {
-  flex: 1;
-  padding: 80px;
+  flex: 1 0 30%;
+  padding: 0 40px 80px;
+}
+
+.middle-content:hover {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transform: scale(1.1);
+  /* box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2); */
 }
 
 .bottom {
@@ -134,6 +144,10 @@ p {
     z-index: 1;
   }
 
+  .middle {
+    margin: auto 100px;
+  }
+
   .nav-content {
     display: flex;
     flex-direction: row;
@@ -142,6 +156,22 @@ p {
   }
 }
 
+.nav-top {
+  width: 100%;
+  background-color: rgb(34, 34, 34);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-content: center;
+}
+
+.nav-a {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  margin: 20px auto;
+  color: white;
+  font-weight: 600;
+}
 .nav-logo {
   height: 30px;
   width: inherit;
